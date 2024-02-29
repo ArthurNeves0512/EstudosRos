@@ -1,0 +1,2 @@
+teste1
+-DCATKIN_DEVEL_PREFIX=/home/droid/Documentos/EstudosRos/catkin_arthur/devel -DCMAKE_INSTALL_PREFIX=/home/droid/Documentos/EstudosRos/catkin_arthur/install -G Unix Makefiles
