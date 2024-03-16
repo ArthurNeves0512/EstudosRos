@@ -67,7 +67,7 @@ set(rosserial_test_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(rosserial_test_SOURCE_PREFIX /home/droid/Documentos/EstudosRos/catkin_arthur/src/Rosserial_noetic/rosserial_test)
+  set(rosserial_test_SOURCE_PREFIX /home/droid/Documentos/EstudosRos/catkin_arthur/src/rosserial/rosserial_test)
   set(rosserial_test_DEVEL_PREFIX /home/droid/Documentos/EstudosRos/catkin_arthur/devel)
   set(rosserial_test_INSTALL_PREFIX "")
   set(rosserial_test_PREFIX ${rosserial_test_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT " " STREQUAL " ")
         message(FATAL_ERROR "Project 'rosserial_test' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'rosserial_test' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/droid/Documentos/EstudosRos/catkin_arthur/src/Rosserial_noetic/rosserial_test/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'rosserial_test' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/droid/Documentos/EstudosRos/catkin_arthur/src/rosserial/rosserial_test/${idir}'.  ${_report}")
     endif()
     _list_append_unique(rosserial_test_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/droid/Documentos/EstudosRos/catkin_arthur/devel/lib;/home/droid/Documentos/EstudosRos/catkin_arthur/devel/lib;/home/droid/ros_catkin_ws/install_isolated/lib)
+    foreach(path /home/droid/Documentos/EstudosRos/catkin_arthur/devel/lib;/home/droid/ros_catkin_ws/install_isolated/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

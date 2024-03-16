@@ -1,3 +1,3 @@
 cmake_minimum_required(VERSION 3.7.2)
 
-set(ROSSERIAL_TIVAC_TOOLCHAIN "/home/droid/Documentos/EstudosRos/catkin_arthur/src/Rosserial_noetic/rosserial_tivac/tivac-cmake/cmake/TivaCToolchain.cmake")
+set(ROSSERIAL_TIVAC_TOOLCHAIN "/home/droid/Documentos/EstudosRos/catkin_arthur/src/rosserial/rosserial_tivac/tivac-cmake/cmake/TivaCToolchain.cmake")
