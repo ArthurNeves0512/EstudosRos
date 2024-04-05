@@ -121,16 +121,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : test/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -143,16 +143,16 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : rebuild_cache/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -186,156 +186,6 @@ depend:
 	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_eus: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-.PHONY : nav_msgs_generate_messages_eus
-
-# fast build rule for target.
-nav_msgs_generate_messages_eus/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
-.PHONY : nav_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_cpp: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : nav_msgs_generate_messages_cpp
-
-# fast build rule for target.
-nav_msgs_generate_messages_cpp/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
-.PHONY : nav_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_lisp: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : nav_msgs_generate_messages_lisp
-
-# fast build rule for target.
-nav_msgs_generate_messages_lisp/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
-.PHONY : nav_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_nodejs: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : nav_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-nav_msgs_generate_messages_nodejs/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
-.PHONY : nav_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_py: rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-.PHONY : nav_msgs_generate_messages_py
-
-# fast build rule for target.
-nav_msgs_generate_messages_py/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/nav_msgs_generate_messages_py.dir/build
-.PHONY : nav_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_windows/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -349,16 +199,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... nav_msgs_generate_messages_cpp"
-	@echo "... nav_msgs_generate_messages_eus"
-	@echo "... nav_msgs_generate_messages_lisp"
-	@echo "... nav_msgs_generate_messages_nodejs"
-	@echo "... nav_msgs_generate_messages_py"
 .PHONY : help
 
 

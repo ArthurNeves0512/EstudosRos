@@ -22,6 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   std_msgs
+  image_transport
 )
 
 ## System dependencies are found with CMake's conventions
@@ -311,6 +312,8 @@ target_link_libraries(publisher ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_executable(subscriber src/escutar.cpp)
 target_link_libraries(subscriber ${catkin_LIBRARIES})
 
+add_executable(imgSend src/visao.cpp)
+target_link_libraries(imgSend ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/teste1.cpp
