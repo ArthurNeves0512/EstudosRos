@@ -1,16 +1,15 @@
 #include<ros/ros.h>
 #include<std_msgs/String.h>
 #include<sstream>
-#include<opencv2/core/core.hpp>
-#include<opencv2/opencv.hpp>
+
 
 int main(int argc, char **argv){
 	//CRIAÇÃO DO NÓ
 	ros::init(argc,argv,"talker");
-	cv::Mat a(30,30,CV_8UC1);
-	a = cv::Scalar(255);
-	cv::imshow("Teste", a);
-	cv::waitKey(0);
+	//cv::Mat a(30,30,CV_8UC1);
+	//a = cv::Scalar(255);
+	//cv::imshow("Teste", a);
+	//cv::waitKey(0);
 	ros::NodeHandle nh;
 	//CRIO O TOPICO CHAMADO DE CHATTER
 	ros::Publisher chatterPub = nh.advertise<std_msgs::String>("chatter",100);

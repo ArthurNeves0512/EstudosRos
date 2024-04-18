@@ -1838,6 +1838,19 @@ publisher/fast:
 .PHONY : publisher/fast
 
 #=============================================================================
+# Target rules for targets named cameraSend
+
+# Build rule for target.
+cameraSend: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cameraSend
+.PHONY : cameraSend
+
+# fast build rule for target.
+cameraSend/fast:
+	$(MAKE) $(MAKESILENT) -f teste1/CMakeFiles/cameraSend.dir/build.make teste1/CMakeFiles/cameraSend.dir/build
+.PHONY : cameraSend/fast
+
+#=============================================================================
 # Target rules for targets named topic_tools_generate_messages_cpp
 
 # Build rule for target.
@@ -2833,6 +2846,7 @@ help:
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
+	@echo "... cameraSend"
 	@echo "... float64_test"
 	@echo "... geotiff_node"
 	@echo "... geotiff_saver"

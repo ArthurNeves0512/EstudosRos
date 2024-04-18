@@ -99,6 +99,18 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -141,18 +153,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -306,6 +306,48 @@ publisher/fast:
 	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f teste1/CMakeFiles/publisher.dir/build.make teste1/CMakeFiles/publisher.dir/build
 .PHONY : publisher/fast
 
+# Convenience name for target.
+teste1/CMakeFiles/cameraSend.dir/rule:
+	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 teste1/CMakeFiles/cameraSend.dir/rule
+.PHONY : teste1/CMakeFiles/cameraSend.dir/rule
+
+# Convenience name for target.
+cameraSend: teste1/CMakeFiles/cameraSend.dir/rule
+
+.PHONY : cameraSend
+
+# fast build rule for target.
+cameraSend/fast:
+	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f teste1/CMakeFiles/cameraSend.dir/build.make teste1/CMakeFiles/cameraSend.dir/build
+.PHONY : cameraSend/fast
+
+src/enviarCamera.o: src/enviarCamera.cpp.o
+
+.PHONY : src/enviarCamera.o
+
+# target to build an object file
+src/enviarCamera.cpp.o:
+	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f teste1/CMakeFiles/cameraSend.dir/build.make teste1/CMakeFiles/cameraSend.dir/src/enviarCamera.cpp.o
+.PHONY : src/enviarCamera.cpp.o
+
+src/enviarCamera.i: src/enviarCamera.cpp.i
+
+.PHONY : src/enviarCamera.i
+
+# target to preprocess a source file
+src/enviarCamera.cpp.i:
+	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f teste1/CMakeFiles/cameraSend.dir/build.make teste1/CMakeFiles/cameraSend.dir/src/enviarCamera.cpp.i
+.PHONY : src/enviarCamera.cpp.i
+
+src/enviarCamera.s: src/enviarCamera.cpp.s
+
+.PHONY : src/enviarCamera.s
+
+# target to generate assembly for a file
+src/enviarCamera.cpp.s:
+	cd /home/droid/Documentos/EstudosRos/catkin_arthur/build && $(MAKE) $(MAKESILENT) -f teste1/CMakeFiles/cameraSend.dir/build.make teste1/CMakeFiles/cameraSend.dir/src/enviarCamera.cpp.s
+.PHONY : src/enviarCamera.cpp.s
+
 src/escutar.o: src/escutar.cpp.o
 
 .PHONY : src/escutar.o
@@ -405,9 +447,13 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... cameraSend"
 	@echo "... imgSend"
 	@echo "... publisher"
 	@echo "... subscriber"
+	@echo "... src/enviarCamera.o"
+	@echo "... src/enviarCamera.i"
+	@echo "... src/enviarCamera.s"
 	@echo "... src/escutar.o"
 	@echo "... src/escutar.i"
 	@echo "... src/escutar.s"

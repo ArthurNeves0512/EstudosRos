@@ -280,6 +280,7 @@
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/hector_slam/hector_marker_drawing/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/install/strip.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/install/local.dir
+/home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/install.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/sensor_msgs_generate_messages_eus.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/subscriber.dir
@@ -288,11 +289,11 @@
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/sensor_msgs_generate_messages_py.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/imgSend.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/publisher.dir
+/home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/cameraSend.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/test.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/edit_cache.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/rebuild_cache.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/list_install_components.dir
-/home/droid/Documentos/EstudosRos/catkin_arthur/build/teste1/CMakeFiles/install.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/rosserial/rosserial_server/CMakeFiles/install/strip.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/rosserial/rosserial_server/CMakeFiles/install/local.dir
 /home/droid/Documentos/EstudosRos/catkin_arthur/build/rosserial/rosserial_server/CMakeFiles/install.dir

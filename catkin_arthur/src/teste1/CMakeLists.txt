@@ -314,6 +314,9 @@ target_link_libraries(subscriber ${catkin_LIBRARIES})
 
 add_executable(imgSend src/visao.cpp)
 target_link_libraries(imgSend ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+add_executable(cameraSend src/enviarCamera.cpp)
+target_link_libraries(cameraSend ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/teste1.cpp
